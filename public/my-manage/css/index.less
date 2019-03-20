@@ -1,0 +1,143 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+a,a:hover,a:active,a:link,a:visited{
+    text-decoration: none;
+}
+body,html{
+    height: 100%;
+}
+.nav{
+    height: 100%;
+    width: 180px;
+    background-color: #222D32;
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    transition: all 0.5s;
+    .brand{
+        // width: 100%;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+       
+        background-color: #367FA9;
+        a{
+            color: #fff;
+            font-size: 20px;
+        }
+       
+    }
+    .user{
+        width: 100%;
+        height: 180px;
+        padding-top: 30px;
+        img{
+            display: block;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto;
+        }
+        p{
+            text-align: center;
+            font-size: 18px;
+            color: #fff;
+            height: 40px;
+            line-height: 40px;
+        }
+    }
+    .first{
+        width: 100%;
+       
+        li{
+            width: 100%;
+           a{
+               display: block;
+               width: 100%;
+               height: 40px;
+               color: #fff;
+               line-height: 40px;
+               padding-left: 40px;
+               border-left: 3px solid transparent;
+           } 
+           .active{
+            background-color: #1D1F21;
+            border-left: 3px solid #006699;
+           }
+        
+        }
+    }
+    .second{
+        width: 100%;
+        display: none;
+        li{
+            a{
+                height: 40px;
+                padding-left: 60px;
+                border-left: 3px solid transparent;
+               
+            }
+            .active{
+                background-color: #1D1F21;
+                border-left: 3px solid #006699;
+               }
+        }
+        
+    }
+  
+    
+}
+
+.nav.change{
+    left:-180px;
+}
+
+.main{
+   height: 100%;
+    width: 100%;
+    padding-left: 180px;
+    overflow: hidden;
+    padding-top: 50px;
+    transition: all 0.5s;
+    .top{
+    height: 50px;
+    background-color: #3C8DBC;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: all 0.5s;
+    padding-left: 180px;
+    z-index: 2;
+        a{
+            height: 50px;
+            width: 50px;
+            color: #fff;
+            font-size: 16px;
+            line-height: 50px;
+            text-align: center;
+            float: left;
+        }
+        .logout{
+          float: right;
+        }
+    }
+    .breadcrumb{
+        margin: 20px;
+    }
+    .contain{
+        height: 400px;
+        .left,.right{
+            margin:0 20px;
+            height: 400px;
+            width: 45%;
+            float: left;
+        }
+    }
+}
+.main.change,.top.change{
+    padding-left: 0;
+}
