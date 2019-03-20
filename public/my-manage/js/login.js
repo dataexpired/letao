@@ -70,10 +70,14 @@ $('#form').on('success.form.bv', function (e) {
                 validator.updateStatus('username', 'INVALID', 'callback');
                 return false;
             }
-            if (r.error === 1001) {
+            else if (r.error === 1001) {
                 validator.updateStatus('password', 'INVALID', 'callback');
                 return false;
+            } 
+            else {
+                location.href='http://127.0.0.1:3000/my-manage/index.html';
             }
+
         },
         error: function () {
         }
