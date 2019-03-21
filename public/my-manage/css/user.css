@@ -1,0 +1,11 @@
+.container .table th,
+.container .table td {
+  text-align: center;
+  vertical-align: middle;
+}
+#paginator {
+  float: right;
+}
+.container{
+  width: 100%;
+}

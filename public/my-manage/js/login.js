@@ -77,7 +77,6 @@ $('#form').on('success.form.bv', function (e) {
             else {
                 location.href='http://127.0.0.1:3000/my-manage/index.html';
             }
-
         },
         error: function () {
         }

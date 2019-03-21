@@ -88,7 +88,7 @@ html {
   left: -180px;
 }
 .main {
-  height: 100%;
+  height: 1000px;
   width: 100%;
   padding-left: 180px;
   overflow: hidden;
@@ -135,3 +135,4 @@ html {
 .top.change {
   padding-left: 0;
 }
+

@@ -7,7 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
+    <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.min.css">
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/user.css">
     <title>Document</title>
 </head>
 
@@ -26,12 +28,12 @@
         <ul class="first">
             <li><a href="user.html"><span class="glyphicon glyphicon-user"></span> 用户管理</a></li>
             <li>
-                    <a href="javascript:;" class="cate"><span class="glyphicon glyphicon-list"></span> 分类管理</a>
-                    <ul class="second" style="display:block">
-                        <li><a href="category1.html" >分类一</a></li>
-                        <li><a href="category2.html" class="active">分类二</a></li>
-    
-                    </ul>
+                <a href="javascript:;" class="cate"><span class="glyphicon glyphicon-list"></span> 分类管理</a>
+                <ul class="second" style="display:block">
+                    <li><a href="category1.html">分类一</a></li>
+                    <li><a href="category2.html" class="active">分类二</a></li>
+
+                </ul>
             </li>
             <li><a href="product.html"><span class="glyphicon glyphicon-tags"></span> 商品管理</a></li>
         </ul>
@@ -52,37 +54,119 @@
             </ol>
 
             <!-- 具体内容（页面不同，具体内容也不同） -->
-            <div class="contain"></div>
+            <div class="container">
+                <button class="btn btn-default addBtn" data-toggle="modal" data-target=".addModal" style='margin-bottom: 20px'>添加分类</button>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th width='10%'> 序号</th>
+                            <th width='30%'>一级分类名</th>
+                            <th width='30%'>二级分类名</th>
+                            <th width='30%'>二级分类LOGO</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+
+                <ul id='paginator'></ul>
+            </div>
         </div>
+    </div>
 
     </div>
 
-    <!-- 模态框 -->
-
+    <!-- 退出时的模态框 -->
     <div class="modal fade logoutModal" tabindex="-1">
-            <div class="modal-dialog modal-sm" role="document">
-              <div class="modal-content">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
                 <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title">温馨提示</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">温馨提示</h4>
                 </div>
                 <div class="modal-body">
-                  <p style="color:rgb(160, 0, 0)"><span class="glyphicon glyphicon-info-sign"></span>您确定要退出后台管理系统吗？ </p>
+                    <p style="color:rgb(160, 0, 0)"><span class="glyphicon glyphicon-info-sign"></span>您确定要退出后台管理系统吗？
+                    </p>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                  <button type="button" class="btn btn-primary confirm">退出</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary confirm">退出</button>
                 </div>
-              </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-          </div><!-- /.modal -->
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!-- 添加分类的模态框 -->
+    <div class="modal fade addModal" tabindex="-1">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">添加分类</h4>
+                </div>
+                <form action="">
+                    <div class="modal-body">
+                        <!-- 一级菜单选择下拉菜单 -->
+                        <div class="dropdown" style="margin-bottom:20px">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                                data-toggle="dropdown">
+                                <span class="select">选择一级分类</span> 
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                               
+                            </ul>
+                        </div>
+                        <!-- 二级分类添加输入框 -->
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="add" placeholder="请输入二级分类" name='addcate'>
+                        </div>
+                        <!-- 上传图片 -->
+                        <!-- !!将标签与表单项关联，则点击标签时，将聚焦到表单项上 -->
+                        <label for="upload" class="btn btn-default">上传图片</label>
+                        <input type="file" id='upload' class='hidden'>
+                        
+                        <img src="./images/none.png" alt="" width="100px" style="display:block;margin:20px 0">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="submit" class="btn btn-primary add">添加</button>
+
+                    </div>
+                </form>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
 
     <script src='./lib/jquery/jquery.min.js'></script>
     <script src='./lib/bootstrap/js/bootstrap.min.js'></script>
     <script src='./lib/nprogress/nprogress.js'></script>
-    <script src='./js/index.js'></script>
+    <script src='./lib/bootstrap-paginator/bootstrap-paginator.min.js'></script>
+    <script src='./lib/bootstrap-validator/js/bootstrapValidator.min.js'></script>
+    <script src='./lib/artTemplate/template-web.js'></script>
+    <script src='./js/common.js'></script>
+    <script src='./js/cate2.js'></script>
 
+    <script type='text/html' id='tmp3'>
+        {{each rows v i}}
+        <tr>
+            <td>{{i+1}}</td>
+            <td>{{v.categoryName}}</td>
+            <td>{{v.brandName}}</td>
+            <td><img src="{{v.brandLogo}}" alt="" width='100px'></td>
+            
+        </tr>
+        {{/each}}
+    </script>
+    <script type='text/html' id='tmp4'>
+        {{each rows v}}
+        <li data-catename={{v.categoryName}}><a href="#">{{v.categoryName}}</a></li>
+        {{/each}}
+    </script>
 </body>
 
 </html>

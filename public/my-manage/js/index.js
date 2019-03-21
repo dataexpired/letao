@@ -1,32 +1,4 @@
-// 滑动显示二级菜单
-$('.cate').on('click',function(){
-    $('.second').stop().slideToggle();
-});
 
-// 滑动折叠左侧栏
-$('.fold').on('click',function(){
-    $('.nav,.main,.top').toggleClass('change');
-});
-
-// 退出功能
-$('.logout').on('click',function(){
-    // 显示模态框的两种方法：元素标签中设置相应属性；js中调用模态框插件的方法
-    $('.logoutModal').modal('show');
-})
-$('.confirm').on('click',function(){
-
-    $.ajax({
-        url: "/employee/employeeLogout",
-        type: "GET",
-        dataType: "json",
-        success: function( info ) {
- 
-          if ( info.success ) {
-            location.href = "login.html"
-          }
-        }
-      })
-});
 
 // 柱状图
 // 基于准备好的dom，初始化echarts实例
