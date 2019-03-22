@@ -30,7 +30,7 @@ $('.addModal form').bootstrapValidator({
         validating: 'glyphicon glyphicon-refresh'
     },
     fields: {
-        //校验用户名，对应name表单的name属性
+        //校验用户名，对应表单的name属性
         addcate: {
             validators: {
                 notEmpty: {

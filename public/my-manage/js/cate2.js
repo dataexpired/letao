@@ -57,4 +57,37 @@ $('.dropdown-menu').on('click', 'li', function () {
 
 
 // 表单校验
+$('form').bootstrapValidator({
+    feedbackIcons: {
+        valid: 'glyphicon glyphicon-ok',
+        invalid: 'glyphicon glyphicon-remove',
+        validating: 'glyphicon glyphicon-refresh'
+    },
+    fields: {
+        //校验用户名，对应name表单的name属性
+        dropdown: {
+            validators: {
+                notEmpty: {
+                    message: '请选择一级分类'
+                }
+            }
+        },
+        addcate:{
+            validators:{
+                notEmpty:{
+                    message:'请输入二级分类'
+                }
+            }
+        },
+        upload:{
+            validators:{
+                notEmpty:{
+                    message:'请上传图片'
+                }
+            }
+        }
+    }
+});
+
+
 

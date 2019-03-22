@@ -109,15 +109,17 @@
                 <form action="">
                     <div class="modal-body">
                         <!-- 一级菜单选择下拉菜单 -->
-                        <div class="dropdown" style="margin-bottom:20px">
-                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
-                                data-toggle="dropdown">
-                                <span class="select">选择一级分类</span> 
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                               
-                            </ul>
+                        <div class="form-group">
+                            <div class="dropdown" style="margin-bottom:20px">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                                    data-toggle="dropdown" name="dropdown">
+                                    <span class="select">选择一级分类</span>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+
+                                </ul>
+                            </div>
                         </div>
                         <!-- 二级分类添加输入框 -->
                         <div class="form-group">
@@ -125,10 +127,12 @@
                         </div>
                         <!-- 上传图片 -->
                         <!-- !!将标签与表单项关联，则点击标签时，将聚焦到表单项上 -->
-                        <label for="upload" class="btn btn-default">上传图片</label>
-                        <input type="file" id='upload' class='hidden'>
-                        
-                        <img src="./images/none.png" alt="" width="100px" style="display:block;margin:20px 0">
+                        <div class="form-group">
+                            <label for="upload" class="btn btn-default" name='upload'>上传图片</label>
+                            <input type="file" id='upload' class='hidden'>
+
+                            <img src="./images/none.png" alt="" width="100px" style="display:block;margin:20px 0">
+                        </div>
 
                     </div>
                     <div class="modal-footer">
