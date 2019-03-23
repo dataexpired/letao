@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+.clearfix::both,
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+}
+a,
+a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+html,
+body {
+  height: 100%;
+}
+.container {
+  max-width: 640px;
+  min-width: 320px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 45px 0 55px;
+  position: relative;
+}
+.top {
+  width: 100%;
+  height: 45px;
+  background-color: #006699;
+  padding: 0 45px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.top h3 {
+  color: antiquewhite;
+  font-size: 20px;
+  height: 100%;
+  line-height: 45px;
+  display: block;
+  overflow: hidden;
+  text-align: center;
+  font-weight: 400;
+}
+.top a {
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  position: absolute;
+}
+.top .home {
+  left: 0;
+}
+.top .search {
+  right: 0;
+}
+.bottom {
+  height: 55px;
+  background-color: #006699;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.bottom ul {
+  width: 100%;
+}
+.bottom ul li {
+  width: 25%;
+  float: left;
+}
+.bottom ul li a {
+  width: 100%;
+  height: 50px;
+  display: block;
+  padding-top: 8px;
+  text-align: center;
+}
+.bottom ul li a p {
+  font-size: 14px;
+}
+.bottom ul li .active {
+  color: orange;
+}
+.main {
+  height: 100%;
+  width: 100%;
+  background-color: skyblue;
+}
