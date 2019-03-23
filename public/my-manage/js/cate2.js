@@ -61,7 +61,6 @@ $('.dropdown-menu').on('click', 'li', function () {
 
 });
 
-
 // 表单校验
 $('form').bootstrapValidator({
     excluded: [],//使原指定不校验的类型进行校验
