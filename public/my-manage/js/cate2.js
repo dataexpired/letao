@@ -53,11 +53,18 @@ $('.addBtn').on('click', function () {
 $('.dropdown-menu').on('click', 'li', function () {
     var catename = $(this).data('catename');
     $('.select').text(catename);
+    // 手动改变校验状态，使校验通过
+    $('form').data('bootstrapValidator').updateStatus('categoryId', 'VALID');
+    // 将选中的一级分类的id赋给隐藏域的value属性
+    var cateId = $(this).data('cateid');
+    $('.cateId').val(cateId);
+
 });
 
 
 // 表单校验
 $('form').bootstrapValidator({
+    excluded: [],//使原指定不校验的类型进行校验
     feedbackIcons: {
         valid: 'glyphicon glyphicon-ok',
         invalid: 'glyphicon glyphicon-remove',
@@ -65,29 +72,67 @@ $('form').bootstrapValidator({
     },
     fields: {
         //校验用户名，对应name表单的name属性
-        dropdown: {
+        categoryId: {
             validators: {
                 notEmpty: {
                     message: '请选择一级分类'
                 }
             }
         },
-        addcate:{
-            validators:{
-                notEmpty:{
-                    message:'请输入二级分类'
+        brandName: {
+            validators: {
+                notEmpty: {
+                    message: '请输入二级分类'
                 }
             }
         },
-        upload:{
-            validators:{
-                notEmpty:{
-                    message:'请上传图片'
+        brandLogo: {
+            validators: {
+                notEmpty: {
+                    message: '请上传图片'
                 }
             }
         }
     }
 });
+
+// 利用fileupload.js插件实现图片预览
+$('#upload').fileupload({
+    done: function (e, data) {
+        var res = data.result.picAddr;
+        $('.logoPic').attr('src', res);
+        $("[name='brandLogo']").val(res);
+        // 手动更改校验状态
+        $('form').data('bootstrapValidator').updateStatus('brandLogo','VALID');
+    }
+});
+
+// 拦截浏览器默认行为——表单提交，发送ajax请求
+$('form').on('success.form.bv', function (e) {
+    e.preventDefault();
+    $.ajax({
+        url: '/category/addSecondCategory',
+        type: 'post',
+        data: $('form').serialize(),
+        dataType: 'json',
+        success: function (res) {
+            if(res.success){
+                $('form').data('bootstrapValidator').resetForm(true);
+                // 需手动恢复下拉按钮的文本和图片初始预览地址
+                $('.select').text('选择一级分类');
+                $('.logoPic').attr('src', "./images/none.png");
+                // 隐藏模态框
+                $('.addModal').modal('hide');
+                // 渲染第一页
+                page=1;
+                render(page,pageSize);
+            }
+        }
+    });
+});
+
+
+
 
 
 

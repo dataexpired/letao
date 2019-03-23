@@ -116,6 +116,8 @@
                                     <span class="select">选择一级分类</span>
                                     <span class="caret"></span>
                                 </button>
+                                <!-- 隐藏域：用于向后台传递数据 -->
+                                <input type="hidden" name='categoryId' value='' class="cateId">
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 
                                 </ul>
@@ -123,15 +125,16 @@
                         </div>
                         <!-- 二级分类添加输入框 -->
                         <div class="form-group">
-                            <input type="text" class="form-control" id="add" placeholder="请输入二级分类" name='addcate'>
+                            <input type="text" class="form-control" id="add" placeholder="请输入二级分类" name='brandName'>
                         </div>
                         <!-- 上传图片 -->
                         <!-- !!将标签与表单项关联，则点击标签时，将聚焦到表单项上 -->
                         <div class="form-group">
-                            <label for="upload" class="btn btn-default" name='upload'>上传图片</label>
-                            <input type="file" id='upload' class='hidden'>
+                            <label for="upload" class="btn btn-default">上传图片</label>
+                            <input type="file" id='upload' class='hidden' name='pic1' data-url='/category/addSecondCategoryPic'>
 
-                            <img src="./images/none.png" alt="" width="100px" style="display:block;margin:20px 0">
+                            <img src="./images/none.png" alt="" width="100px" style="display:block;margin:20px 0" class="logoPic">
+                            <input type="hidden" name='brandLogo' value=''>
                         </div>
 
                     </div>
@@ -151,6 +154,9 @@
     <script src='./lib/nprogress/nprogress.js'></script>
     <script src='./lib/bootstrap-paginator/bootstrap-paginator.min.js'></script>
     <script src='./lib/bootstrap-validator/js/bootstrapValidator.min.js'></script>
+    <script src='./lib/jquery-fileupload/jquery.ui.widget.js'></script>
+    <script src='./lib/jquery-fileupload/jquery.iframe-transport.js'> </script>
+    <script src='./lib/jquery-fileupload/jquery.fileupload.js'></script>
     <script src='./lib/artTemplate/template-web.js'></script>
     <script src='./js/common.js'></script>
     <script src='./js/cate2.js'></script>
@@ -168,7 +174,7 @@
     </script>
     <script type='text/html' id='tmp4'>
         {{each rows v}}
-        <li data-catename={{v.categoryName}}><a href="#">{{v.categoryName}}</a></li>
+        <li data-catename={{v.categoryName}} data-cateid={{v.id}}><a href="#">{{v.categoryName}}</a></li>
         {{/each}}
     </script>
 </body>

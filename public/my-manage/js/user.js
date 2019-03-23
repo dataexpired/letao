@@ -42,7 +42,6 @@ $('tbody').on('click', '.btn', function () {
 
 });
 $('.excute').on('click', function () {
-
     $.ajax({
         url:'/user/updateUser',
         type:'post',
@@ -53,8 +52,9 @@ $('.excute').on('click', function () {
         dataType:'json',
         success:function(res){
             if(res.success){
+                console.log($('.excuteModal'));
                 $('.excuteModal').modal('hide');
-                render(page);
+                render(page,pageSize);
             }
         }
     });
