@@ -1,0 +1,51 @@
+.main {
+  padding-left: 90px;
+  position: relative;
+}
+.main .left {
+  width: 90px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+}
+.main .left .main .mui-scroll-wrapper {
+  top: 0;
+  bottom: 0;
+}
+.main .left ul {
+  width: 100%;
+}
+.main .left ul li {
+  border: 1px solid #c7c3c3;
+  border-left: none;
+  background-color: #e4dede;
+}
+.main .left ul li a {
+  height: 50px;
+  width: 100%;
+  color: #666;
+  line-height: 50px;
+  text-align: center;
+}
+.main .left ul .selected {
+  background-color: #fff;
+  border: none;
+}
+.main .right {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.main .right ul li {
+  float: left;
+  width: 33.3%;
+}
+.main .right ul li a {
+  width: 100%;
+  height: 81px;
+  text-align: center;
+}
+.main .right ul li a img {
+  width: 70px;
+  height: 50px;
+}

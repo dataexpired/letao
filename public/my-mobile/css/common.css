@@ -13,6 +13,9 @@
   line-height: 0;
   visibility: hidden;
 }
+a {
+  display: block;
+}
 a,
 a:hover {
   text-decoration: none;
@@ -91,8 +94,9 @@ body {
 .bottom ul li .active {
   color: orange;
 }
+
 .main {
   height: 100%;
   width: 100%;
-  background-color: skyblue;
+  background-color: #fff;
 }
