@@ -81,7 +81,11 @@
     </script>
 
     <script type='text/html' id='tmp2'>
+        {{if rows.length==0}}
+            <p class='tip' style='margin:10px'>当前一级分类下暂无数据</p>
+        {{/if}}
         {{each rows v i}}
+        
         <li><a href="javascript:;">
                 <img src="{{v.brandLogo}}" alt="">
                 <p>{{v.brandName}}</p>

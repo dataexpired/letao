@@ -90,13 +90,8 @@ body {
 }
 .bottom ul li a p {
   font-size: 14px;
+  color: #fff;
 }
 .bottom ul li .active {
   color: orange;
-}
-
-.main {
-  height: 100%;
-  width: 100%;
-  background-color: #fff;
 }

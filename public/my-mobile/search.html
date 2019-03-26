@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./lib/fa/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./lib/mui/css/mui.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/search.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+    <!-- 顶部栏 -->
+    <div class="top">
+        <a href="index.html" class="back mui-icon mui-icon-back"></a>
+      
+        <h3>搜索中心</h3>
+
+    </div>
+
+    <!-- 中间容器 -->
+    <div class="main">
+        <div class="searchbox">
+            <input type="search" placeholder="请输入搜索关键字">
+            <button class="mui-btn mui-btn-primary searchBtn">搜索</button>
+        </div>
+
+        <div class="showbox">
+            
+
+           
+
+        </div>
+    </div>
+
+    <!-- 底部栏 -->
+    <div class="bottom">
+        <ul class="mui-clearfix">
+            <li><a href="#"><span class="fa fa-home"></span>
+                    <p>首页</p>
+                </a></li>
+            <li><a href="category.html"><span class="fa fa-bars"></span>
+                    <p>分类页</p>
+                </a></li>
+            <li><a href="cart.html"><span class="fa fa-shopping-cart"></span>
+                    <p>购物车</p>
+                </a></li>
+            <li><a href="user.html"><span class="fa fa-user"></span>
+                    <p>用户中心</p>
+                </a></li>
+        </ul>
+    </div>
+    </div>
+    <script src='./lib/jquery/jquery.min.js'></script>
+    <script src='./lib/mui/js/mui.js'></script>
+    <script src='./lib/artTemplate/template-web.js'></script>   
+    <script src='./js/search.js'></script>
+    <script type='text/html' id='tmp'>
+        {{if rows.length==0}}
+             <p>没有更多数据了</p>
+        {{else}}
+            <div class="title">
+                <span>搜索历史</span>
+                <a href="javascript:;" class='clear'><span class="fa fa-trash"></span> 清空记录</a>
+            </div>
+            <ul>
+                    {{each rows v i}}
+                <li>
+                    <!-- 实现点击搜索记录也可跳转并带着内容 -->
+                    <a href="searchList.html?key={{v}}" class="item mui-pull-left">{{v}}</a>
+                    <a href="javascript:;" class="delete mui-pull-right mui-icon mui-icon-closeempty" data-index={{i}}></a>
+                </li>
+                {{/each}}
+            </ul>
+        {{/if}}
+    </script>
+    
+</body>
+
+</html>
