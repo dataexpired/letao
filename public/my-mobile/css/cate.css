@@ -1,6 +1,7 @@
 .main {
   padding-left: 90px;
   position: relative;
+  height: 100%;
 }
 .main .left {
   width: 90px;

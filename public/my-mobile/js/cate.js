@@ -1,4 +1,6 @@
+$(function(){
 // 获取并渲染一级分类
+
 var renderTop = function () {
     $.ajax({
         url: '/category/queryTopCategory',
@@ -38,3 +40,4 @@ $('.left ul').on('click', 'li', function () {
     id=$(this).data('id')
     renderSecond(id);
 });
+})
