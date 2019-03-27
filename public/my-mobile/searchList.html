@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="./favicon.ico">
     <link rel="stylesheet" href="./lib/fa/css/font-awesome.min.css">
     <link rel="stylesheet" href="./lib/mui/css/mui.min.css">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/search.css">
+
+    <link rel="stylesheet" href="./css/searchList.css">
+
     <title>Document</title>
 </head>
 
@@ -18,19 +20,37 @@
         <!-- 顶部栏 -->
         <div class="top">
             <a href="index.html" class="back mui-icon mui-icon-back"></a>
-
-            <h3>搜索中心</h3>
-
+            <h3 style="margin:0">商品列表</h3>
         </div>
 
-        <!-- 中间容器 -->
+        <!-- 内容 -->
         <div class="main">
+
             <div class="searchbox">
                 <input type="search" placeholder="请输入搜索关键字">
                 <button class="mui-btn mui-btn-primary searchBtn">搜索</button>
             </div>
 
-            <div class="showbox">
+            <div class="sort">
+                <ul>
+                    <li><a href="javascript:;">上架时间 <span class="fa fa-angle-down"></span></a></li>
+                    <li><a href="javascript:;" data-type='price'>价格 <span class="fa fa-angle-down"></span></a></li>
+                    <li><a href="javascript:;" data-type='num'>库存 <span class="fa fa-angle-down"></span></a></li>
+                    <li><a href="javascript:;">折扣 <span class="fa fa-angle-down"></span></a></li>
+                </ul>
+            </div>
+
+            <div class="product">
+                
+                <div class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
+
+                        <ul class="mui-clearfix">
+                            <div class="loading"></div>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         </div>
 
@@ -52,30 +72,28 @@
             </ul>
         </div>
     </div>
+
     <script src='./lib/jquery/jquery.min.js'></script>
     <script src='./lib/mui/js/mui.js'></script>
     <script src='./lib/artTemplate/template-web.js'></script>
-    <script src='./js/search.js'></script>
-    <script type='text/html' id='tmp'>
-        {{if rows.length==0}}
-             <p>没有更多数据了</p>
-        {{else}}
-            <div class="title">
-                <span>搜索历史</span>
-                <a href="javascript:;" class='clear'><span class="fa fa-trash"></span> 清空记录</a>
-            </div>
-            <ul>
-                    {{each rows v i}}
-                <li>
-                    <!-- 实现点击搜索记录也可跳转并带着内容 -->
-                    <a href="searchList.html?key={{v}}" class="item mui-pull-left">{{v}}</a>
-                    <a href="javascript:;" class="delete mui-pull-right mui-icon mui-icon-closeempty" data-index={{i}}></a>
-                </li>
-                {{/each}}
-            </ul>
+    <script src='./js/common.js'></script>
+    <script src='./js/searchList.js'></script>
+    <script type='text/html' id='tmp1'>
+        {{if data.length==0}}
+            <p style='text-align:center;margin-top:10px;'>·暂无搜索结果·</p>
         {{/if}}
+       
+        {{each data v i}}
+        <li><a href="">
+                <!-- 图片可能不存在，返回undefined，怎么处理？ -->
+                <img src="/mobile/images/product.jpg" alt="">
+                <p class="info mui-ellipsis-2">{{v.proName}} </p>
+                <p class="price"><span>￥{{v.price}}</span><span>￥{{v.oldPrice}}</span></p>
+                <button class="mui-btn mui-btn-primary">立即购买</button>
+        </a></li>
+    {{/each}}
+   
     </script>
-
 </body>
 
 </html>

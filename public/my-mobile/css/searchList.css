@@ -1,0 +1,84 @@
+.mui-scroll-wrapper{
+    top:130px;
+    bottom: 55px;
+}
+.main{
+    background-color: #fff;
+    height: 100%;
+    
+}
+.main .sort{
+    width: 100%:
+}
+.main .sort ul {
+    width: 100%;
+    height: 30px;
+}
+.main .sort ul li{
+    width: 25%;
+    height: 30px;
+    float: left;
+    
+}
+.main .sort a,.main .sort ul li a:hover{
+    display: block;
+    height: 30px;
+    width: 100%;
+    background-color: rgb(235, 226, 226);
+    line-height: 30px;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+}
+.main .sort ul li a.active{
+    color: orange;
+}
+
+.loading{
+    width: 40px;
+    height: 40px;
+    border: 3px solid #369;
+    margin: 50px auto;
+    animation: rotate 1s infinite;
+}
+@keyframes rotate{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.product {
+    padding-top: 8px;
+    width: 100%;
+   height: 440px;
+  }
+  .product ul li {
+    float: left;
+    width: 47%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+   margin:9px;
+  }
+
+  .product ul li a {
+    width: 100%;
+    height: 244px;
+    text-align: center;
+  }
+  .product ul li a img {
+    width: 130px;
+  }
+.product ul li a .info {
+    height: 40px;
+  }
+   .product ul li a .price span:first-child {
+    color: red;
+  }
+  .product ul li a .price span:last-child {
+    text-decoration: line-through;
+  }
+  
