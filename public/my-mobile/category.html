@@ -75,12 +75,16 @@
     <script src='./js/cate.js'></script>
 
     <script type='text/html' id='tmp1'>
+       
         {{each rows v i}}
         <li data-id={{v.id}} class="{{i==0?'selected':''}}"><a href="javascript:;" >{{v.categoryName}}</a></li>
         {{/each}}
     </script>
 
     <script type='text/html' id='tmp2'>
+        {{if rows.length==0}}
+        <p style='margin:10px'>暂无内容</p>
+        {{/if}}
         {{each rows v i}}
         <li><a href="javascript:;">
                 <img src="{{v.brandLogo}}" alt="">
