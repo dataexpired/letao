@@ -1,0 +1,103 @@
+.right{
+    position: absolute;
+    right: 0;
+}
+.main{
+    height: 100%;
+    position: relative;
+    background-color: #fff;
+
+}
+
+.mui-scroll-wrapper{
+    position: absolute;
+    
+}
+.proPic{
+    height: 640px;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+}
+.proTitle{
+    height: 42px;
+    line-height: 42px;
+    font-weight: 700;
+    border-bottom: 1px solid #ccc;
+    margin-left: 5px;
+}
+.proPrice{
+    height: 44px;
+    line-height: 44px;
+    border-bottom: 1px solid #ccc;
+    margin-left: 5px;
+}
+.proPrice .price{
+    color:red;
+}
+.proPrice .oldPrice{
+    font-size: 12px;
+    text-decoration: line-through;
+}
+.proSize{
+    height: 52px;
+    line-height: 52px;
+    border-bottom: 1px solid #ccc;
+    margin-left: 5px;
+}
+.proSize span{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    line-height: 25px;
+    text-align: center;
+}
+.select{
+    background-color: orange;
+    color:white;
+}
+.proNum{
+    height: 56px;
+    line-height: 56px;
+    border-bottom: 1px solid #ccc;
+    margin-left: 5px;
+
+}
+.proNum .rest{
+    font-size: 14px;
+    color: #666;
+}
+
+.bottom{
+    border-top:1px solid red;
+}
+.bottom{
+    background-color: #fff;
+
+}
+.bottom a{
+    display: block;
+}
+.bottom .cart{
+    float: left;
+    height: 55px;
+    color: rgb(40, 129, 218);
+    line-height:55px; 
+    margin-left: 10px;
+}
+
+.fr{
+    float: right;
+    height: 100%;
+}
+a.addCart,a.buy{
+    margin:10px 5px;
+    float: left;
+    height: 31px;
+    padding:6px 12px;
+    color: #fff;
+}
+
+
+

@@ -84,12 +84,12 @@
         {{/if}}
        
         {{each data v i}}
-        <li><a href="">
+        <li><a href="javascript:;" data-id={{v.id}}>
                 <!-- 图片可能不存在，返回undefined，怎么处理？ -->
                 <img src="/mobile/images/product.jpg" alt="">
                 <p class="info mui-ellipsis-2">{{v.proName}} </p>
                 <p class="price"><span>￥{{v.price}}</span><span>￥{{v.oldPrice}}</span></p>
-                <button class="mui-btn mui-btn-primary">立即购买</button>
+                <button class="mui-btn mui-btn-primary buy">立即购买</button>
         </a></li>
     {{/each}}
    

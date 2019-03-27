@@ -74,5 +74,10 @@ $(function () {
 
     // 4、加载中的动画效果：在render中实现
 
+    // 5、点击立即购买，跳转到商品详情页，并将商品id传递过去
+    $('.product ul').on('click','a',function(){
+        var productId=$(this).data('id');
+        location.href='detail.html?productId='+productId;
+    });
 
 })

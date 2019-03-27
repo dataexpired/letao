@@ -1,0 +1,38 @@
+.main ul li a{
+    display: block;
+    height: 43px;
+    line-height: 43px;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    color:black;
+    padding-left: 10px;
+}
+p{
+    height: 20px;
+    line-height: 20px;
+    margin: 0;
+ 
+}
+.main ul li:first-child a{
+    height: 64px;
+    line-height: 64px;
+
+}
+.tx,.name{
+    float: left;
+    height: 100%;
+    padding-top:10px;
+}
+.tx img{
+    width: 42px;
+    height: 42px;
+    margin-right:10px;
+}
+#logout{
+    width: 618px;
+   margin:10px;
+   height: 40px;
+   line-height: 40px;
+   padding: 0;
+  
+}
